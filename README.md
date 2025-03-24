@@ -1,456 +1,196 @@
-# ⬇️ The Only Markdown Cheatsheet You Need
+## **1. Object Oriented Paradigm (OOP vs OOD)**
+### **OOP (Object-Oriented Programming)**
+- เน้นการเขียนโค้ดโดยใช้ **Class** และ **Object**
+- มีจุดเด่นที่การรวมข้อมูล (Data) และการทำงานกับข้อมูล (Method) ให้อยู่ใน Object เดียวกัน
+- หลักการสำคัญ:
+  - **Encapsulation:** ซ่อนรายละเอียดการทำงานภายใน
+  - **Inheritance:** สืบทอดคุณสมบัติจากคลาสแม่
+  - **Polymorphism:** ความสามารถในการใช้วิธีเดียวกันกับวัตถุหลายประเภท
 
-_Here you can find & download PDF version of the Complete Markdown Cheatsheet.  
-Feel free to download and use it. ✌🏼_
-
-✍🏼 I've also written, in more detail, some articles about Markdown in general.  
-
-<a href="https://dev.to/imluka/the-only-markdown-cheatsheet-you-will-ever-need-ccg"><img src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white" /></a>
-<a href="https://medium.com/@im-luka/the-only-markdown-cheatsheet-you-will-ever-need-a2941d008497"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" /></a>
-<a href="https://imluka.hashnode.dev/the-only-markdown-cheatsheet-you-will-ever-need"><img src="https://img.shields.io/badge/Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white" /></a>
-
----
-
-#### ⚠️ Note
-GitHub specific Markdown doesn't support some of the features listed in PDF. Perhaps in the future, they might include it.  
-
-👇🏼 If you are interested in GitHub specific Markdown, follow docs below.
+### **OOD (Object-Oriented Design)**
+- เน้นการออกแบบซอฟต์แวร์ก่อนลงมือเขียนโค้ด
+- มุ่งเน้นที่ **Responsibility (ความรับผิดชอบ)** ของแต่ละ Object และ **Relationship (ความสัมพันธ์)** ระหว่าง Object
+- ให้ความสำคัญกับการวิเคราะห์ **Commonality** และ **Variability** เพื่อรองรับการเปลี่ยนแปลงในอนาคต
 
 ---
 
-### What is Markdown?
-Markdown is a lightweight markup language that you can use to format plain text documents.  
-Write docs for your GitHub projects, edit your GitHub profile _README_ etc. You fill find it all here.  
+## **2. Software Development Process**
+### **ขั้นตอนหลักในการพัฒนาซอฟต์แวร์**
+- **Requirement Gathering:** รวบรวมความต้องการของผู้ใช้ ซึ่งมักจะมีการเปลี่ยนแปลงระหว่างการพัฒนา
+- **Functional Decomposition:** การแบ่งปัญหาใหญ่ออกเป็นปัญหาเล็ก ๆ
+- **Dealing with Requirement Change:** การออกแบบให้รองรับการเปลี่ยนแปลงของความต้องการได้ง่าย
 
-Let's dive into it. ⤵️
-
-#### Table of Contents
-
-1. [Paragraph](#paragraph)
-2. [Headings](#headings)
-3. [Emphasis](#emphasis)
-4. [Blockquote](#blockquote)
-5. [Images](#images)
-6. [Links](#links)
-7. [Code](#code)
-8. [Lists](#lists)
-    - [Ordered List](#orderedlist)
-    - [Unordered List](#unorderedlist)
-    - [Mixed List](#mixedlist)
-9. [Table](#table)
-10. [Task List](#tasklist)
-11. [Footnote](#footnote)
-12. [Jump to section](#sectionjump)
-13. [Horizontal Line](#horizontalline)
-14. [HTML](#html)
+### **ปัญหาของการออกแบบแบบ Procedural**
+- **Low Cohesion:** ฟังก์ชันไม่ได้จัดกลุ่มตามความรับผิดชอบเดียวกัน ทำให้แก้ไขยาก
+- **Tight Coupling:** ส่วนต่าง ๆ ของระบบเชื่อมโยงกันมากเกินไป การเปลี่ยนแปลงหนึ่งอาจกระทบอีกหลายส่วน
 
 ---
 
-<a name="paragraph" />
+## **3. OO Concepts**
+### **Class & Object**
+- **Class:** เป็นแม่แบบ (Template) สำหรับสร้าง Object
+- **Object:** อินสแตนซ์ของ Class ที่ถูกสร้างขึ้นมาและมีสถานะ (State) ของตัวเอง
 
-## Paragraph
-By writing regular text you are basically writing a paragraph.
+### **Encapsulation**
+- การซ่อนรายละเอียดการทำงานของ Class และเปิดเผยเฉพาะสิ่งที่จำเป็น
+- ใช้ **Private**, **Protected**, และ **Public** เพื่อควบคุมการเข้าถึงข้อมูล
 
-```
-This is a paragraph.
-```
-This is a paragraph.
+### **Inheritance**
+- การสืบทอดคุณสมบัติจาก Class แม่ ทำให้ไม่ต้องเขียนโค้ดซ้ำ
+- **ข้อควรระวัง:** การสืบทอดที่มากเกินไปอาจทำให้เกิดปัญหาความซับซ้อน
 
----
+### **Polymorphism**
+- ความสามารถให้ Method เดียวกันทำงานได้หลายแบบตามชนิดของ Object ที่ใช้
+- ตัวอย่างเช่น Method `draw()` อาจวาดได้ทั้งวงกลม สามเหลี่ยม หรือสี่เหลี่ยม
 
-<a name="headings" />
-
-## Headings
-There are 6 heading variants. The number of "#" symbols, followed by text, indicates the importance of the heading.
-
-```
-# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
-```
-
-# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
+### **Abstract Class & Interface**
+- **Abstract Class:** ให้โครงสร้างพื้นฐานแก่ Subclass แต่ไม่สามารถสร้าง Object ได้โดยตรง
+- **Interface:** กำหนดชุดของ Method ที่ Class ต้อง Implement
 
 ---
 
-<a name="emphasis" />
-
-## Emphasis
-Modifying text is so neat and easy. You can make your text bold, italic and strikethrough.
-
-```
-Using two asterisks **this text is bold**.  
-Two underscores __work as well__.  
-Let's make it *italic now*.  
-You guessed it, _one underscore is also enough_.  
-Can we combine **_both of that_?** Absolutely.
-What if I want to ~~strikethrough~~?
-```
-
-Using two asterisks **this text is bold**.  
-Two underscores __work as well__.  
-Let's make it *italic now*.  
-You guessed it, _one underscore is also enough_.  
-Can we combine **_both of that_?** Absolutely.  
-What if I want to ~~strikethrough~~?
+## **4. Object Responsibility**
+- การออกแบบ Object โดยคำนึงถึง **ความรับผิดชอบ** ของแต่ละ Object ให้ชัดเจน
+- ใช้หลักการ **Single Responsibility Principle (SRP)** เพื่อลดความซับซ้อนของแต่ละ Object
+- การออกแบบที่ดีควรแบ่งหน้าที่ชัดเจน เช่น:
+  - `Student` มีหน้าที่หาเส้นทางไปห้องถัดไป
+  - `Teacher` มีหน้าที่บอกนักเรียนให้ไปห้องถัดไป
+  - `Classroom` มีหน้าที่เก็บข้อมูลเกี่ยวกับตำแหน่งของห้อง
 
 ---
 
-<a name="blockquote" />
+## **5. UML (Unified Modeling Language)**
+### **Use Case Diagram**
+- แสดงการโต้ตอบระหว่าง **Actor** (เช่น ผู้ใช้) กับ **System**
+- ใช้สำหรับวิเคราะห์ความต้องการของผู้ใช้
 
-## Blockquote
-Want to emphasise importance of the text? Say no more.
+### **Activity Diagram**
+- แสดงลำดับขั้นตอน (Workflow) หรือการไหลของข้อมูล
 
-```
-> This is a blockquote.
-> Want to write on a new line with space between?
->
-> > And nested? No problem at all.
-> >
-> > > PS. you can **style** your text _as you want_.
-```
+### **Class Diagram**
+- แสดงโครงสร้าง Class และความสัมพันธ์ระหว่าง Class
+- ความสัมพันธ์ที่พบบ่อย:
+  - **Inheritance (is-a relationship):** ความสัมพันธ์แบบสืบทอด
+  - **Aggregation (has-a relationship):** ความสัมพันธ์ที่ Object หนึ่งใช้ Object อื่น
+  - **Composition (part-of relationship):** ความสัมพันธ์ที่ Object หนึ่งเป็นส่วนประกอบที่สำคัญของอีก Object
 
-> This is a blockquote.
-> Want to write on a new line with space between?
->
-> > And nested? No problem at all.
-> >
-> > > PS. you can **style** your text _as you want_. :
+### **Sequential Diagram**
+- แสดงลำดับการเรียก Method ระหว่าง Object
 
 ---
 
-<a name="images" />
+## **6. Design Patterns**
+### **Gang of Four (GoF) Design Patterns**
+- มีทั้งหมด 23 รูปแบบ โดยแบ่งเป็น 3 กลุ่ม:
+  - **Creational Patterns:** การสร้าง Object (เช่น Factory, Singleton)
+  - **Structural Patterns:** การจัดโครงสร้างของ Object (เช่น Adapter, Facade)
+  - **Behavioral Patterns:** การจัดการพฤติกรรมของ Object (เช่น Observer, Strategy)
 
-## Images
-The best way is to simply drag & drop image from your computer directly. You can also create reference to image and assign it that way.  
-Here is the syntax.
-
-```
-![text if the image fails to load](auto-generated-path-to-file-when-you-upload-image "Text displayed on hover")
-
-[logo]: auto-generated-path-to-file-when-you-upload-image "Hover me"
-![error text][logo]
-```
-
-![text if the image fails to load](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png "Text displayed on hover")
-
-[logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png "Hover me"
-![error text][logo]
+ได้เลยครับ! แต่ละประเภทของ Design Patterns มีวัตถุประสงค์และแนวคิดที่แตกต่างกัน ซึ่งสามารถอธิบายได้ตามนี้:
 
 ---
 
-<a name="links" />
+## **1. Creational Patterns (การสร้าง Object)**
+> **โฟกัสที่การสร้าง Object อย่างมีประสิทธิภาพและยืดหยุ่น**
 
-## Links
-Similar to images, links can also be inserted directly or by creating a reference. You can create both inline and block links.
+### **ลักษณะเด่น**
+- ช่วยควบคุมกระบวนการสร้าง Object ให้เป็นระเบียบและสม่ำเสมอ
+- ลดการใช้ `new` โดยตรง ซึ่งทำให้ระบบยืดหยุ่นต่อการเปลี่ยนแปลงในอนาคต
+- เหมาะกับกรณีที่การสร้าง Object มีความซับซ้อน
 
-```
-[markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
-[docs]: https://github.com/adam-p/markdown-here
+### **ตัวอย่าง Patterns**
+✅ **Factory Pattern**  
+- สร้าง Object ผ่าน Factory Class ที่ทำหน้าที่สร้าง Object ตามเงื่อนไขหรือพารามิเตอร์ที่ระบุ  
+- **ตัวอย่าง:** ระบบสั่งอาหารออนไลน์ที่มีเมนูหลากหลาย Factory จะเลือกประเภทอาหารที่เหมาะสมให้อัตโนมัติ
 
-[Like it so far? Follow me on GitHub](https://github.com/im-luka)
-[My Markdown Cheatsheet - star it if you like it][markdown-cheatsheet]
-Find some great docs [here][docs]
-```
-
-[markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
-[docs]: https://github.com/adam-p/markdown-here
-
-[Like it so far? Follow me on GitHub](https://github.com/im-luka)  
-[My Markdown Cheatsheet - star it if you like it][markdown-cheatsheet]  
-Find some great docs [here][docs]
+✅ **Singleton Pattern**  
+- ทำให้ Class นั้นมีเพียง **1 Instance** ตลอดอายุการใช้งานของโปรแกรม  
+- **ตัวอย่าง:** ระบบจัดการ Database Connection เพื่อป้องกันการเชื่อมต่อซ้ำซ้อน
 
 ---
 
-<a name="code" />
+## **2. Structural Patterns (การจัดโครงสร้างของ Object)**
+> **โฟกัสที่การจัดระเบียบโครงสร้างของ Class และ Object ให้ยืดหยุ่นและเป็นระเบียบ**
 
-## Code
-You can cerate both inline and full block code snippets. You can also define programming language you were using in your snippet. All by using backticks.
+### **ลักษณะเด่น**
+- ช่วยในการจัดระเบียบและสร้างความสัมพันธ์ระหว่าง Class ให้มีความยืดหยุ่น
+- เหมาะสำหรับโครงการขนาดใหญ่ที่มี Class จำนวนมาก
 
-```
-    I created `.env` file at the root.
-    Backticks inside backticks? `` `No problem.` ``
+### **ตัวอย่าง Patterns**
+✅ **Adapter Pattern**  
+- ใช้แปลงอินเทอร์เฟซของ Class หนึ่งให้เข้ากับอีก Class หนึ่ง  
+- **ตัวอย่าง:** แปลงปลั๊กไฟต่างประเทศให้เข้ากับปลั๊กไฟบ้านเรา
 
-    ```
-    {
-      learning: "Markdown",
-      showing: "block code snippet"
-    }
-    ```
-
-    ```js
-    const x = "Block code snippet in JS";
-    console.log(x);
-    ```
-```
-
-I created `.env` file at the root.
-Backticks inside backticks? `` `No problem.` ``
-
-```
-{
-  learning: "Markdown",
-  showing: "block code snippet"
-}
-```
-
-```js
-const x = "Block code snippet in JS";
-console.log(x);
-```
+✅ **Facade Pattern**  
+- สร้างอินเทอร์เฟซที่ง่ายขึ้นสำหรับการเรียกใช้งานระบบที่ซับซ้อน  
+- **ตัวอย่าง:** "ปุ่มเดียว" ในแอปพลิเคชันที่เริ่มทำงานหลายกระบวนการพร้อมกัน (เช่น ปุ่ม "เริ่มเกม" ที่โหลดข้อมูล, สร้างผู้เล่น และเปิดเสียงเพลงพร้อมกัน)
 
 ---
 
-<a name="lists" />
+## **3. Behavioral Patterns (การจัดการพฤติกรรมของ Object)**
+> **โฟกัสที่การควบคุมการสื่อสารและการทำงานร่วมกันระหว่าง Object**
 
-## Lists
-As you can do in HTML, Markdown allows creating of both ordered and unordered lists.
+### **ลักษณะเด่น**
+- มุ่งเน้นการจัดระเบียบการสื่อสารระหว่าง Object ให้ชัดเจนและง่ายต่อการดูแล
+- เหมาะกับกรณีที่มี Object จำนวนมากและมีปฏิสัมพันธ์กันหลายรูปแบบ
 
-<a name="orderedlist" />
+### **ตัวอย่าง Patterns**
+✅ **Observer Pattern**  
+- ใช้สำหรับสถานการณ์ที่ Object หนึ่งต้องแจ้งการเปลี่ยนแปลงให้กับ Object อื่น ๆ หลายตัว  
+- **ตัวอย่าง:** ระบบแจ้งเตือน (Notification) เมื่อมีการเปลี่ยนแปลงข้อมูลในแอปพลิเคชัน
 
-### Ordered List
-
-```
-1. HTML
-2. CSS
-3. Javascript
-4. React
-7. I'm Frontend Dev now 👨🏼‍🎨
-```
-
-1. HTML
-2. CSS
-3. Javascript
-4. React
-7. I'm Frontend Dev now 👨🏼‍🎨
-
-<a name="unorderedlist" />
-
-### Unordered List
-
-```
-- Node.js
-+ Express
-* Nest.js
-- Learning Backend ⌛️
-```
-
-- Node.js
-+ Express
-* Nest.js
-- Learning Backend ⌛️
-
-<a name="mixedlist" />
-
-### Mixed List
-You can also mix both of the lists and create sublists.  
-**PS.** Try not to create lists deeper than two levels. It is the best practice.
-
-```
-1. Learn Basics
-   1. HTML
-   2. CSS
-   7. Javascript
-2. Learn One Framework
-   - React 
-     - Router
-     - Redux
-   * Vue
-   + Svelte
-```
-
-1. Learn Basics
-   1. HTML
-   2. CSS
-   7. Javascript
-2. Learn One Framework
-   - React 
-     - Router
-     - Redux
-   * Vue
-   + Svelte
+✅ **Strategy Pattern**  
+- กำหนดอัลกอริทึมที่เปลี่ยนแปลงได้ภายหลังโดยไม่ต้องแก้ไขโค้ดหลัก  
+- **ตัวอย่าง:** ระบบคำนวณค่าขนส่งที่มีหลายวิธี เช่น EMS, Kerry, หรือ Flash Express
 
 ---
 
-<a name="table" />
+## 🔎 **เปรียบเทียบความแตกต่าง**
 
-## Table
-Great way to display well-arranged data. Use "|" symbol to separate columns and ":" symbol to align row content.
-
-```
-| Left Align (default) | Center Align | Right Align |
-| :------------------- | :----------: | ----------: |
-| React.js             | Node.js      | MySQL       |
-| Next.js              | Express      | MongoDB     |
-| Vue.js               | Nest.js      | Redis       |
-```
-
-| Left Align (default) | Center Align | Right Align |
-| :------------------- | :----------: | ----------: |
-| React.js             | Node.js      | MySQL       |
-| Next.js              | Express      | MongoDB     |
-| Vue.js               | Nest.js      | Redis       |
+| Aspect            | **Creational**              | **Structural**             | **Behavioral**             |
+|-------------------|-----------------------------|-----------------------------|-----------------------------|
+| **โฟกัสหลัก**        | การสร้าง Object อย่างยืดหยุ่น  | การจัดโครงสร้าง Object ให้มีความเป็นระเบียบ  | การควบคุมการสื่อสารและการทำงานร่วมกันของ Object |
+| **เหมาะกับสถานการณ์**| ต้องการควบคุมกระบวนการสร้าง Object ที่ซับซ้อน | ต้องการจัดระเบียบ Class/Object จำนวนมาก | ต้องการควบคุมพฤติกรรมหรือการสื่อสารระหว่าง Object |
+| **ตัวอย่าง Pattern** | Factory, Singleton          | Adapter, Facade              | Observer, Strategy            |
 
 ---
 
-<a name="tasklist" />
+### 📌 **สรุปสั้น ๆ**
+- **Creational Patterns** → เน้นที่ "วิธีการสร้าง"  
+- **Structural Patterns** → เน้นที่ "โครงสร้างและความสัมพันธ์"  
+- **Behavioral Patterns** → เน้นที่ "พฤติกรรมและการสื่อสาร"  
 
-## Task List
-Keeping track of the tasks that are done, and those that need to be done.
+### **Adapter Pattern**
+- เปลี่ยนอินเทอร์เฟซของ Class หนึ่งให้ตรงกับที่อีก Class ต้องการ
+- ใช้เมื่อมี Class ที่มีฟังก์ชันการทำงานถูกต้องแต่ไม่เข้ากับระบบที่มีอยู่
 
-```
-- [x] Learn Markdown
-- [ ] Learn Frontend Development
-- [ ] Learn Full Stack Development
-```
-
-- [x] Learn Markdown
-- [ ] Learn Frontend Development
-- [ ] Learn Full Stack Development
+### **Facade Pattern**
+- สร้างอินเทอร์เฟซที่เรียบง่ายและปิดบังความซับซ้อนของระบบเบื้องหลัง
+- ตัวอย่างเช่น "ปุ่มเดียว" สำหรับเปิดเครื่องซักผ้าที่ซ่อนหลายกระบวนการไว้เบื้องหลัง
 
 ---
 
-<a name="footnote" />
+## **7. Design Principles**
+### **Encapsulation**
+- ซ่อนข้อมูลและวิธีการทำงานภายใน Object และเปิดเผยเฉพาะสิ่งที่จำเป็น
 
-## Footnote
-Want to describe something at the end of the file? Use footnote!
+### **Cohesion**
+- การออกแบบให้ Method ที่เกี่ยวข้องกับวัตถุเดียวกันอยู่ภายใน Class เดียวกัน
+- ส่งผลให้ Class นั้นมีหน้าที่เฉพาะเจาะจง
 
-```
-#### I am working on a new project. [^1]
-[^1]: Stack is: React, Typescript, Tailwind CSS  
-
-Project is about music & movies.
-
-##### Hope you will like it. [^see]
-[^see]: Loading... ⌛️
-```
-
-#### I am working on a new project. [^1]
-[^1]: Stack is: React, Typescript, Tailwind CSS  
-
-Project is about music & movies.
-
-##### Hope you will like it. [^see]
-[^see]: Loading... ⌛️
+### **Coupling**
+- ระดับความเชื่อมโยงระหว่าง Class หากมีการเปลี่ยนแปลงใน Class หนึ่งและส่งผลกระทบถึงอีก Class หนึ่งมาก แสดงว่ามี Coupling สูง ควรออกแบบให้ Coupling ต่ำที่สุดเท่าที่จะเป็นไปได้
 
 ---
 
-<a name="sectionjump" />
+## **8. Case Study**
+### **ตัวอย่างการออกแบบซอฟต์แวร์ด้วย OOAD**
+- การออกแบบระบบ CAD/CAM สำหรับตัดแผ่นโลหะ
+- แบ่งออกเป็น 3 ระบบหลัก:
+  - **CAD/CAM System:** สร้างและแก้ไขแบบการออกแบบ
+  - **Expert System:** วิเคราะห์และแปลงการออกแบบเป็นคำสั่งเครื่องจักร
+  - **Machine Instructions:** ควบคุมเครื่องจักรให้ตัดตามแบบที่ออกแบบไว้
 
-## Jump to section
-You can give ID to a section so that you can jump straight to that part of the file from wherever you are.
-
-```
-[Jump to a section with custom ID](#some-id)
-
-...
-
-<a name="some-id" />
-
-##### Section with some ID
-```
-
-[Jump to a section with custom ID](#some-id)
-
----
-
-<a name="horizontalline" />
-
-## Horizontal Line
-You can use asterisks, hyphens or underlines (*, -, _) to create horizontal line.  
-The only rule is that you must include at least three chars of the symbol.
-
-```
-First Horizontal Line
-
-***
-
-Second One
-
------
-
-Third
-
-_________
-```
-
-First Horizontal Line
-
-***
-
-Second One
-
------
-
-Third
-
-_________
-
-
----
-
-<a name="html" />
-
-## HTML
-You can also use raw HTML in your Markdown file. Most of the times that will work well, but sometimes you can experience some differences that you are not used to when working with standard HTML. Using CSS will not work.
-
-```
-<h1>This is a heading</h1>
-<p>Paragraph...</p>
-
-<hr />
-
-<img src="auto-generated-path-to-file-when-you-upload-image" width="200">
-<a href="https://github.com/im-luka">Follow me on GitHub</a>
-
-<br />
-<br />
-
-<p>Quick hack for <strong><em>centering image</em></strong>?</p>
-<p align="center"><img src="auto-generated-path-to-file-when-you-upload-image" /></p>
-
-<details>
-  <summary>One more quick hack? 🎭</summary>
-  
-  → Easy  
-  → And simple
-</details>
-```
-
-
-<h1>This is a heading</h1>
-<p>Paragraph...</p>
-
-<hr />
-
-<img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200">
-<a href="https://github.com/im-luka">Follow me on GitHub</a>
-
-<br />
-<br />
-
-<p>Quick hack for <strong><em>centering image</em></strong>?</p>
-<p align="center"><img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200" /></p>
-
-<details>
-  <summary>One more quick hack? 🎭</summary>
-  
-  → Easy  
-  → And simple
-</details>
-
----
-
-<a name="some-id" />
-
-##### Section with some ID
-
-
+### **การแก้ปัญหาด้วย Design Pattern**
+- ใช้ **Adapter Pattern** เพื่อรองรับการเปลี่ยนแปลงของ CAD/CAM Software
+- ใช้ **Facade Pattern** เพื่อซ่อนความซับซ้อนของการสื่อสารระหว่างระบบ
